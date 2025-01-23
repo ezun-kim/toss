@@ -1,7 +1,7 @@
 import { Segment, SelectionRange } from './types';
 
 export function splitSegmentsForRange(segments: Segment[], range: SelectionRange): Segment[] {
-  const { startSegmentId, startOffset, endSegmentId, endOffset } = range;
+  const { startSegmentId, startOffset, endOffset } = range;
 
   return segments.map(seg => {
     if (seg.id !== startSegmentId) {

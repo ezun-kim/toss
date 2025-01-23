@@ -186,7 +186,7 @@ export const FloatingMenu = ({ editor, selectedStyle }: FloatingMenuProps) => {
         setShouldBounce(false);
 
         // Use the initialWeight as our baseline, and clamp within [100, 900]
-        setFontWeight((prev) => {
+        setFontWeight(() => { // 이전 값을 사용하여 다음 값을 계산
           const nextWeight = Math.round((initialWeight + delta) / 100) * 100;
           return Math.max(100, Math.min(900, nextWeight));
         });
